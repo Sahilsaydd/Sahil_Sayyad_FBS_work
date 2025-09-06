@@ -5,3 +5,11 @@ for i in range(1,7):
         else:
             print(" ",end=" ")
     print()
+    
+
+# * * * * * * 
+# *         * 
+# *         * 
+# *         * 
+# *         *
+# * * * * * *
