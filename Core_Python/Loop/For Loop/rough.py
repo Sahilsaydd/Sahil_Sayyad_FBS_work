@@ -1,0 +1,1 @@
+print(range(10)) ## The Print function always return the object
