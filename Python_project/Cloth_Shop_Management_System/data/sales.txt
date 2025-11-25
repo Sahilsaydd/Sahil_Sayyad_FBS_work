@@ -1,0 +1,7 @@
+sale_id:1763290594 | username:Sahil | item:Shirt | size:L | quantity:3 | price:600 | total:1800 | date:2025-11-16
+sale_id:1763290843 | username:Sahil | item:Armani Pants | size:L | quantity:2 | price:700 | total:1400 | date:2025-11-16
+sale_id:1763291861 | username:Sahil | item:Jeans | size:L | quantity:3 | price:1100 | total:3300 | date:2025-11-16
+sale_id:1763293638 | username:Sahil | item:Jeans | size:L | quantity:10 | price:1100 | total:11000 | date:2025-11-16
+sale_id:1763808170 | username:abc | item:Shirt | size:L | quantity:2 | price:866 | total:1732 | date:2025-11-22
+sale_id:1763808335 | username:abc | item:Shirt | size:L | quantity:2 | price:866 | total:1732 | date:2025-11-22
+sale_id:1763808428 | username:user | item:Shirt | size:L | quantity:2 | price:866 | total:1732 | date:2025-11-22

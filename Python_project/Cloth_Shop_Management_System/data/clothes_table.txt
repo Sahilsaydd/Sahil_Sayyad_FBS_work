@@ -1,0 +1,4 @@
+id:1 | name:Shirt | base_price:766 | stock:30 | price_S:766 | price_M:816 | price_L:866
+id:2 | name:Armani Pants | base_price:600 | stock:50 | price_S:600 | price_M:650 | price_L:700
+id:3 | name:Jeans | base_price:1000 | stock:30 | price_S:1000 | price_M:1050 | price_L:1100
+id:4 | name:Tshirt | base_price:1000 | stock:10 | price_S:1000 | price_M:1050 | price_L:1100
