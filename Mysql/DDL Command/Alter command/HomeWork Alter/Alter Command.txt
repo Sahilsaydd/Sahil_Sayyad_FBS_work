@@ -1,0 +1,164 @@
+Alter Command
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use juyaugust25;
+Database changed
+mysql> show tables;
++-----------------------+
+| Tables_in_juyaugust25 |
++-----------------------+
+| employee              |
+| room                  |
++-----------------------+
+2 rows in set (0.01 sec)
+
+mysql> create table student(id int , name varchar(10), gender char(1), class varchar(20));
+Query OK, 0 rows affected (0.47 sec)
+
+mysql> alter table student add column address varchar(10);
+Query OK, 0 rows affected (0.65 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | YES  |     | NULL    |       |
+| name    | varchar(10) | YES  |     | NULL    |       |
+| gender  | char(1)     | YES  |     | NULL    |       |
+| class   | varchar(20) | YES  |     | NULL    |       |
+| address | varchar(10) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> alter table student add column percentage float(5,2) , add column mobno int(10);
+Query OK, 0 rows affected, 2 warnings (0.30 sec)
+Records: 0  Duplicates: 0  Warnings: 2
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | YES  |     | NULL    |       |
+| name       | varchar(10) | YES  |     | NULL    |       |
+| gender     | char(1)     | YES  |     | NULL    |       |
+| class      | varchar(20) | YES  |     | NULL    |       |
+| address    | varchar(10) | YES  |     | NULL    |       |
+| percentage | float(5,2)  | YES  |     | NULL    |       |
+| mobno      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table student employee modify column percentage int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'employee modify column percentage int' at line 1
+mysql> alter table student  modify column percentage int;
+Query OK, 0 rows affected (0.26 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | YES  |     | NULL    |       |
+| name       | varchar(10) | YES  |     | NULL    |       |
+| gender     | char(1)     | YES  |     | NULL    |       |
+| class      | varchar(20) | YES  |     | NULL    |       |
+| address    | varchar(10) | YES  |     | NULL    |       |
+| percentage | int         | YES  |     | NULL    |       |
+| mobno      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table student add column email_id varchar(20) first;
+Query OK, 0 rows affected (0.22 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| email_id   | varchar(20) | YES  |     | NULL    |       |
+| id         | int         | YES  |     | NULL    |       |
+| name       | varchar(10) | YES  |     | NULL    |       |
+| gender     | char(1)     | YES  |     | NULL    |       |
+| class      | varchar(20) | YES  |     | NULL    |       |
+| address    | varchar(10) | YES  |     | NULL    |       |
+| percentage | int         | YES  |     | NULL    |       |
+| mobno      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> alter table add column genderA char(1) after name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'add column genderA char(1) after name' at line 1
+mysql> alter table student add column genderA char(1) after name;
+Query OK, 0 rows affected (0.33 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| email_id   | varchar(20) | YES  |     | NULL    |       |
+| id         | int         | YES  |     | NULL    |       |
+| name       | varchar(10) | YES  |     | NULL    |       |
+| genderA    | char(1)     | YES  |     | NULL    |       |
+| gender     | char(1)     | YES  |     | NULL    |       |
+| class      | varchar(20) | YES  |     | NULL    |       |
+| address    | varchar(10) | YES  |     | NULL    |       |
+| percentage | int         | YES  |     | NULL    |       |
+| mobno      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> alter table student change column address city varchar(20);
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| email_id   | varchar(20) | YES  |     | NULL    |       |
+| id         | int         | YES  |     | NULL    |       |
+| name       | varchar(10) | YES  |     | NULL    |       |
+| genderA    | char(1)     | YES  |     | NULL    |       |
+| gender     | char(1)     | YES  |     | NULL    |       |
+| class      | varchar(20) | YES  |     | NULL    |       |
+| city       | varchar(20) | YES  |     | NULL    |       |
+| percentage | int         | YES  |     | NULL    |       |
+| mobno      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> alter table student drop column genderA;
+Query OK, 0 rows affected (0.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc studentl
+    -> ;
+ERROR 1146 (42S02): Table 'juyaugust25.studentl' doesn't exist
+mysql> desc student;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| email_id   | varchar(20) | YES  |     | NULL    |       |
+| id         | int         | YES  |     | NULL    |       |
+| name       | varchar(10) | YES  |     | NULL    |       |
+| gender     | char(1)     | YES  |     | NULL    |       |
+| class      | varchar(20) | YES  |     | NULL    |       |
+| city       | varchar(20) | YES  |     | NULL    |       |
+| percentage | int         | YES  |     | NULL    |       |
+| mobno      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
